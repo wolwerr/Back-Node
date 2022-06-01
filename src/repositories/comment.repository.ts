@@ -36,4 +36,17 @@ export class CommentRepository {
             id: id
         }, comment);
     }
+
+    static async getLogin(email: string, password: string) {
+        return getConnection()
+            .getRepository(Comment)
+            .findOne(
+                {
+                    where: {
+                        email: email,
+                        password: password
+                    }
+                }
+            )
+    }
 }

@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/comments', commentsRouter);
+app.use('/', commentsRouter);
 
 
 app.get('/', (req: Request, res: Response) => {

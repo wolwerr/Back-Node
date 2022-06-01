@@ -26,6 +26,10 @@ class CommentsService {
     update(id: number, comment: Comment) {
         return CommentRepository.update(id, comment);
     }
+
+    authenticate(email: string, password: string) {
+        return CommentRepository.getLogin(email, password)
+      }
 }
 
 export default new CommentsService();

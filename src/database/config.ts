@@ -12,6 +12,6 @@ export const connection = createConnection({
     entities: [
         Comment
     ],
-    // logging: true,
+    logging: true,
     // synchronize: true
 });
