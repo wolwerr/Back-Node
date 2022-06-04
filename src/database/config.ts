@@ -13,5 +13,5 @@ export const connection = createConnection({
         Comment
     ],
     logging: true,
-    // synchronize: true
+    synchronize: true
 });
