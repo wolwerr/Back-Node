@@ -15,7 +15,7 @@ app.use('/', commentsRouter);
 
 app.get('/', (req: Request, res: Response) => {
     const messageObject = {
-        message: "Primeiro projeto funcionando na rota"
+        message: "Sistema no ar"
     };
     res.send(messageObject);
 });
