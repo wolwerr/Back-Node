@@ -12,7 +12,7 @@ export class CommentRepository {
     static getById(id: number) {
         return getConnection()
         .getRepository(Comment)
-        .findOne(id);
+        .findOne({ where: { id } });
     }
 
     static create(comment: Comment) {
