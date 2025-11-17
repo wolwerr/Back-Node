@@ -28,10 +28,3 @@ app.listen(process.env.PORT || port, async () => {
     console.log('Banco de dados conectado com sucesso!');
     console.log(`Servidor disponível na porta: ${port}`);
 });
-
-
-// connection.then(() => {
-//     console.log('Banco de dados conectado com sucesso!');
-// }).catch((err) => {
-//     console.log(err);
-// });
