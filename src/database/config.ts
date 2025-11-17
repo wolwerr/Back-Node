@@ -18,4 +18,9 @@ export const connection = createConnection({
             rejectUnauthorized: false,
         }
     }
+}).catch((error) => {
+    console.error('Error ao conectar ao banco de dados:');
+    console.error(error.message);
+    console.error('Verifique as configurações do banco de dados no arquivo .env');
+    return null;
 });
