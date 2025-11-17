@@ -24,7 +24,18 @@ app.get('/', (req: Request, res: Response) => {
 
 
 app.listen(process.env.PORT || port, async () => {
-    await connection;
-    console.log('Banco de dados conectado com sucesso!');
+    try {
+        const conn = await connection;
+        if (conn) {
+            console.log('Banco de dados conectado com sucesso!');
+        } else {
+            console.log('Servidor iniciado SEM conexão com banco de dados.');
+            console.log('Verifique as configurações do banco de dados no arquivo .env');
+        }
+    } catch (error: any) {
+        console.error('Erro ao conectar ao banco de dados:', error.message);
+        console.log('Servidor iniciado SEM conexão com banco de dados.');
+        console.log('Verifique as configurações do banco de dados no arquivo .env');
+    }
     console.log(`Servidor disponível na porta: ${port}`);
 });
